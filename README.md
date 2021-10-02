@@ -1,6 +1,19 @@
 Backoffice Backend - Ubademy
 
-Ejecución de la app
+Ejecución de la app via Heroku
+
+    1 - Acceder a los endpoint:
+        - endpoint: Obtener usuario = metodo GET https://calm-shore-44525.herokuapp.com/user/{email}
+        - endpoint: Agregar usuario  = metodo POST https://calm-shore-44525.herokuapp.com/user
+            el JSON debe ser: 
+            {
+                "email": "admin@gmail.com",
+                "contraseña": "webadmin",
+                "nombre": "Admin",
+                "apellido": "Admin"
+            }
+            
+Ejecución de la app via docker-compose (local) 
 
     1 - Instalar Docker: https://docs.docker.com/engine/install/
     2 - Instalar Docker-Compose: https://docs.docker.com/compose/install/

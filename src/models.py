@@ -8,4 +8,3 @@ class UserAdmin(Base):
     contraseña      = Column(String)
     nombre          = Column(String)
     apellido        = Column(String)
-
