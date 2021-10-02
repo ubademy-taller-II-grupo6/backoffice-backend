@@ -1,6 +1,7 @@
-FROM python:3.8
+FROM python
 WORKDIR /usr/src/app
 COPY ./src/*.py ./
 COPY ./src/requirements.txt ./
-RUN pip install -r requirements.txt
-CMD [ "uvicorn", "main:app", "--reload", "--workers", "1", "--host", "0.0.0.0", "--port", "8000" ]
+RUN pip3 install -r requirements.txt
+ENV PORT=$PORT DB_URL=$DB_URL
+CMD [ "python3", "main.py" ]

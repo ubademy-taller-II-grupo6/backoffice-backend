@@ -1,9 +1,9 @@
-from sqlalchemy                 import create_engine
-from sqlalchemy.orm             import sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
+import  os
+from    sqlalchemy                 import create_engine
+from    sqlalchemy.orm             import sessionmaker
+from    sqlalchemy.ext.declarative import declarative_base
 
-SQLALCHEMY_DATABASE_URL = "postgresql://postgres:postgres@psql-container:5432/ubademy"
-
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
+result = os.environ.get('DB_URL')
+engine = create_engine(result)
 SessionLocal = sessionmaker(bind=engine)
 Base = declarative_base()

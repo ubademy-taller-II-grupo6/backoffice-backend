@@ -14,8 +14,10 @@ services:
   webserver:
     build:  .
     container_name: webserver-container   
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@psql-container:5432/ubademy
     ports: 
-      - "8000:8000"
+      - "5000:8000"
     depends_on:
       - db
     networks: 
