@@ -3,7 +3,7 @@ from typing     import Optional
 
 class UserAdminJSON (BaseModel):
     email       :   str
-    contraseña  :   Optional[str]
+    contraseña  :   str
     nombre      :   Optional[str]
     apellido    :   Optional[str]
 
