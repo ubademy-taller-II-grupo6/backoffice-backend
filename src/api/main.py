@@ -1,11 +1,18 @@
 import  uvicorn
 import  os
 import  crud
-from    fastapi        import FastAPI, Depends, HTTPException
-from    database       import SessionLocal
-from    schema         import UserAdminJSON
+from    fastapi                 import FastAPI, Depends, HTTPException
+from    fastapi.middleware.cors import CORSMiddleware
+from    database                import SessionLocal
+from    schema                  import UserAdminJSON
 
 app = FastAPI()
+app.add_middleware( CORSMiddleware, 
+                    allow_origins=["*"], 
+                    allow_credentials=True, 
+                    allow_methods=["*"],
+                    allow_headers=["*"],
+                    )
 
 def db():
     try:
